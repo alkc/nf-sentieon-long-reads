@@ -12,13 +12,15 @@ workflow NF_SENTIEON_LONGREAD {
     ch_samplesheet
 
     main:
+    /* DNASCOPE WORKFLOW */
+    // 1. SPLIT BED PRIOR TO DNASCOPE
+    //    i.e. split calling across multiple processes. split diploid bed? haploid calling own process?
+    // 2. DNASCOPE SNV INDEL CALLING
+    // 3. GLUE SHARDS TOGETHER
 
-    // DNASCOPE SNV INDEL
-
+    /* OTHER WORKFLOWS: */
     // LONGREADSV
-
     // HIFI CNV
-
     // QC
 
     output:
