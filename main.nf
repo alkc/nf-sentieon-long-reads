@@ -46,6 +46,24 @@ process HIFICNV {
 
 process LONGREADSV {
 
+    input:
+    tuple meta bam bai
+
+    output:
+    tuple meta sv_vcf sv_vcf_tbi
+
+    script:
+    """
+    sentieon driver \\
+    --input $bam \\
+    --reference ${params.fasta} \\
+    --thread_count ${task.cpus} \\
+    --interval_padding 0 \\
+    --algo LongReadSV \\
+    --model ${params.longread_model}
+    ${meta.id}.sv.vcf.gz
+    """
+
 }
 
 process MOSDEPTH {
