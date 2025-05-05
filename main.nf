@@ -12,6 +12,7 @@ workflow NF_SENTIEON_LONGREAD {
     ch_samplesheet
 
     main:
+    // COPY-BAM step?
     /* DNASCOPE WORKFLOW */
     // 1. SPLIT BED PRIOR TO DNASCOPE
     //    i.e. split calling across multiple processes. split diploid bed? haploid calling own process?
